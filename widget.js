@@ -65,6 +65,19 @@
                     }
                 });
             });
+
+            // Enable value tracing
+            $("#widget").append("<div id='tooltip'>test</div>");
+            $("#plot").bind("plothover", function(event, pos, item){
+                if(item){
+                    var x = item.datapoint[0].toFixed(0),
+                        y = item.datapoint[1].toFixed(0);
+                    $("#tooltip").html(y).css({top: item.pageY+5, left: item.pageX+5}).fadeIn(200);
+
+                } else{
+                    $("#tooltip").hide();
+                }
+            });
             $("#widget").append("<a href=\"https://www.bulkestate.com\">made by Bulkestate</a>");
         });
     }
