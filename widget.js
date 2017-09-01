@@ -57,7 +57,13 @@
 
             // Plot the data
             $.when(status).then(function(){
-                $.plot($("#plot"), [prices], {xaxis: {mode: "time"}});
+                $.plot($("#plot"), [prices], {
+                    xaxis: {mode: "time"},
+                    grid: {
+                        hoverable: true,
+                        clickable: true
+                    }
+                });
             });
             $("#widget").append("<a href=\"https://www.bulkestate.com\">made by Bulkestate</a>");
         });
