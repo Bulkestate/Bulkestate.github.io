@@ -1,0 +1,28 @@
+#widget {
+    position: relative;
+    border: 1px solid black;
+    height: 400px;
+    width: 600px;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+p{
+    text-align: center;
+    font-size: 30px;
+}
+#plot {
+    height: 300px;
+    width: inherit;
+    position: absolute;
+    bottom: 15px;
+}
+
+a{
+    font-size: 11px;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    right: 40%;
+}
