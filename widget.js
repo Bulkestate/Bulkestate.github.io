@@ -39,12 +39,11 @@
                 href:"https://fonts.googleapis.com/css?family=Rubik"
             });
             $("head").append(font_link);
-
+            $("#widget").append("<p>Top Tier Home Value Index Beckett NJ</p>");
             // Set up flot plotting library
             $("#widget").append("<script src=\"jquery.flot.js\"></script>");
             $("#widget").append("<script src=\"jquery.flot.time.js\"></script>");
             $("#widget").append("<div id=\"plot\"></div>");
-            $("#widget").append("<p>Top Tier Home Value Index Beckett NJ</p>")
             var url = "https://www.quandl.com/api/v3/datasets/ZILLOW/C4639_ZHVITT.json?rows=300&api_key=BxZJxK2saJZPEyN7N-AH";
 
             // Get the data
@@ -67,8 +66,8 @@
             });
 
             // Enable value tracing
-            $("#widget").append("<div id='tooltip'>test</div>");
-            $("#plot").bind("plothover", function(event, pos, item){
+            $("#widget").append("<div id='tooltip'></div>");
+            $("#plot").on("plothover", function(event, pos, item){
                 if(item){
                     var x = item.datapoint[0].toFixed(0),
                         y = item.datapoint[1].toFixed(0);

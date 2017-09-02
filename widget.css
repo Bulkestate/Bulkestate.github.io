@@ -1,21 +1,23 @@
 #widget {
-    position: relative;
+    position: static;
     border: 1px solid black;
     height: 400px;
     width: 600px;
     font-family: 'Rubik', sans-serif;
+    display: block;
+    text-align: center;
 }
 
 
-p{
+#widget p{
+    position: relative;
     text-align: center;
     font-size: 30px;
 }
 #plot {
     height: 300px;
     width: inherit;
-    position: absolute;
-    bottom: 15px;
+    position: relative;
 }
 #tooltip{
     position: absolute;
@@ -26,11 +28,8 @@ p{
     opacity: 0.80;
 }
 
-a{
+#widget a{
     font-size: 11px;
     text-decoration: none;
     color: black;
-    position: absolute;
-    bottom: 0;
-    right: 40%;
 }

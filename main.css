@@ -1,4 +1,8 @@
-h1{
-    font-family: Arial;
-    text-align: center;
+body {
+  /*padding-top: 20px;*/
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
 }
