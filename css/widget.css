@@ -8,6 +8,11 @@
     text-align: center;
 }
 
+#widget a{
+    font-size: 11px;
+    text-decoration: none;
+    color: black;
+}
 
 #widget p{
     position: relative;
@@ -26,10 +31,4 @@
     padding: 2px;
     background-color: #fee;
     opacity: 0.80;
-}
-
-#widget a{
-    font-size: 11px;
-    text-decoration: none;
-    color: black;
 }
