@@ -31,7 +31,7 @@
             var css_link = $("<link>", {
                 rel: "stylesheet",
                 type: "text/css",
-                href: "https://bulkestate.github.io/widget.css"
+                href: "https://bulkestate.github.io/css/widget.css"
             });
             $("head").append(css_link);
             var font_link = $("<link>", {
@@ -41,8 +41,8 @@
             $("head").append(font_link);
             $("#widget").append("<p>Top Tier Home Value Index Beckett NJ</p>");
             // Set up flot plotting library
-            $("#widget").append("<script src=\"https://bulkestate.github.io/jquery.flot.js\"></script>");
-            $("#widget").append("<script src=\"https://bulkestate.github.io/jquery.flot.time.js\"></script>");
+            $("#widget").append("<script src=\"https://bulkestate.github.io/js/jquery.flot.js\"></script>");
+            $("#widget").append("<script src=\"https://bulkestate.github.io/js/jquery.flot.time.js\"></script>");
             $("#widget").append("<div id=\"plot\"></div>");
             var url = "https://www.quandl.com/api/v3/datasets/ZILLOW/C4639_ZHVITT.json?rows=300&api_key=BxZJxK2saJZPEyN7N-AH";
 
