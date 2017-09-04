@@ -36,14 +36,14 @@
         <h2> Sales Data</h2>
         <br />
 
-        <div id="country-selector">
+        <div id="country-wrapper">
           <p>Choose the country:</p>
           <select id="country">
             <option value="US">US</option>
           </select>
         </div>
         <br />
-        <div id="state-selector">
+        <div id="state-wrapper">
           <p>Choose a state:</p>
           <select id="state">
             <option value="All" selected="selected">All</option>
@@ -102,11 +102,13 @@
         </div>
         <br />
         <div id="widget"></div>
-        <script src="js/widget.js"></script>
+        <div id="widget-wrapper">
+          <script src="js/widget.js"></script>
+        </div>
         <br />
         <p>Add this widget by pasting the folowing code in <code>&lt;body&gt;</code> of your website</p>
-        <pre id="example"><code>&lt;div id="widget"&gt;&lt;/div&gt;
-&lt;script src="https://bulkestate.github.io/js/widget.js"&gt;</code></pre>
+        <pre id="example"><code>&lt;div id='widget'&gt;&lt;/div&gt;
+&lt;script src='https://bulkestate.github.io/js/widget.js'&gt;&lt;/script&gt;</code></pre>
       </div>
     </div>
   </div>
