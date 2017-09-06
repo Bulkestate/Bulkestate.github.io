@@ -46,7 +46,10 @@
       $('#widget').append('<div id="plot"></div>');
       var url = 'https://www.quandl.com/api/v3/datasets/ZILLOW/C4639_ZHVITT.json?rows=300&api_key=BxZJxK2saJZPEyN7N-AH';
 
-            // Get the data
+      var state = $('#widget-script').attr('state');
+      var country = $('#widget-script').attr('country');
+
+      // Get the data
       var prices = [];
       var status = $.getJSON(url, function (data) {
         $.each(data['dataset']['data'], function (index, date) {
