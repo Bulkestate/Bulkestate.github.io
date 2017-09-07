@@ -7,10 +7,21 @@ function refresh_content () {
   $('#widget-script').replaceWith("<script id='widget-script' src='https://bulkestate.github.io' country='" + country + "' state='" + state + "'></script>");
 }
 
+function show_timeframe () {
+  $('#date-wrapper').hide();
+  $('#months-wrapper').hide();
+  var selected = $('#time-frame').find(':checked').val();
+  $('#' + selected + '-wrapper').show();
+}
 $(document).ready(function () {
   refresh_content();
+  show_timeframe();
 });
 
 $('#state').change(function () {
   refresh_content();
+});
+
+$('#time-frame').change(function () {
+  show_timeframe();
 });

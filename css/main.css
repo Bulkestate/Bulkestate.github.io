@@ -7,6 +7,9 @@
     margin: 0 auto;
 }
 
+#date-wrapper, #months-wrapper{
+    display: none;
+}
 h2{
     text-align: center;
 }

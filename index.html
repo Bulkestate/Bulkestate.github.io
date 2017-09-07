@@ -102,10 +102,33 @@
                     <option value="WY">Wyoming</option>
                 </select>
             </div>
-            <br />
+            <br>
+            <div id="time-wrapper">
+                <h3>Time Frame</h3>
+                <form id="time-frame">
+                    <input type="radio" name="time-frame" value="months"> Specify number of months
+                    <br>
+                    <div id='months-wrapper'>
+                      <div class="alert alert-info" role="alert">
+                        <p>When you specify the number of months, the widget will display data from the present moment (continuously updating, even on your website) to specified number of months into the past.</p>
+                      </div>
+                      Number of months: <input id="months" type="number">
+                    </div>
+                    <input type="radio" name="time-frame" value="date"> Specify date
+                    <div id="date-wrapper">
+                      <div class="alert alert-info" role="alert">
+                        <p>Specify start and end date, if you want the widget to always display data from that interval.
+                        You can also specify just the starting date and the widget will display data from that date
+                        until the momment when widget is generated (continuously updated, even on your website)
+                        or specify just the end date for the widget to use the earliest available data.</p>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <br>
             <div id="widget"></div>
             <script id="widget-script" src="js/widget.js" country='US' state='All'></script>
-            <br />
+            <br>
             <p>Add this widget by pasting the folowing code in <code>&lt;body&gt;</code> of your website</p>
             <pre id="example"><code>&lt;div id='widget'&gt;&lt;/div&gt;
 &lt;script src='https://bulkestate.github.io/js/widget.js' country='US' state='All'&gt;&lt;/script&gt;</code></pre>
