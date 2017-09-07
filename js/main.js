@@ -1,18 +1,39 @@
 var country = 'US';
 var state = 'All';
+var start_date = '';
+var end_date = '';
+var no_months = '';
+var selected = 'months';
+var type = 'MLPAH';
 
 function refresh_content () {
+  country = $('#country').find(':selected').val();
   state = $('#state').find(':selected').val();
-  $('#example').html("<code>&lt;div id='widget'&gt;&lt;/div&gt; \n&lt;script id='widget-script' src='https://bulkestate.github.io/js/widget.js' country='" + country + "' state='" + state + "'&gt;&lt;/script&gt;");
-  $('#widget-script').replaceWith("<script id='widget-script' src='https://bulkestate.github.io' country='" + country + "' state='" + state + "'></script>");
+  type = $('#type').find(':selected').val();
+  update_timeframe();
+  $('#example').html("<code>&lt;div id='widget'&gt;&lt;/div&gt; \n&lt;script id='widget-script' src='https://bulkestate.github.io/js/widget.js' type='" + type + "' no_months='" + no_months + "' start_date='" + start_date + "' end_date='" + end_date + "' country='" + country + "' state='" + state + "'&gt;&lt;/script&gt;");
+  $('#widget-script').replaceWith("<script id='widget-script' src='https://bulkestate.github.io' type='" + type + "' no_months='" + no_months + "' start_date='" + start_date + "' end_date='" + end_date + "' country='" + country + "' state='" + state + "'></script>");
+}
+
+function update_timeframe () {
+  if (selected === 'months') {
+    no_months = $('#months').val();
+    start_date = '';
+    end_date = '';
+  } else {
+    start_date = $('#date-start').val();
+    end_date = $('#date-end').val();
+    no_months = '';
+  }
 }
 
 function show_timeframe () {
   $('#date-wrapper').hide();
   $('#months-wrapper').hide();
-  var selected = $('#time-frame').find(':checked').val();
+  selected = $('#time-frame').find(':checked').val();
   $('#' + selected + '-wrapper').show();
 }
+
 $(document).ready(function () {
   refresh_content();
   show_timeframe();
@@ -24,4 +45,5 @@ $('#state').change(function () {
 
 $('#time-frame').change(function () {
   show_timeframe();
+  refresh_content();
 });

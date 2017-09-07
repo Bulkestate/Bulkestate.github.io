@@ -44,7 +44,14 @@
                     <option value="US">US</option>
                 </select>
             </div>
-            <br />
+            <br>
+            <div id="type-wrapper">
+              <h3>Type:</h3>
+              <select id="type">
+                <option value="MLPAH"> Median Listing Price </option>
+              </select>
+            </div>
+            <br>
             <div id="state-wrapper">
                 <h3>State:</h3>
                 <select id="state">
@@ -122,6 +129,8 @@
                         until the momment when widget is generated (continuously updated, even on your website)
                         or specify just the end date for the widget to use the earliest available data.</p>
                       </div>
+                      Start date: <input id='date-start' type='text' placeholder="yyyy-mm-dd">
+                      End date: <input id='date-end' type='text' placeholder="yyyy-mm-dd">
                     </div>
                 </form>
             </div>
