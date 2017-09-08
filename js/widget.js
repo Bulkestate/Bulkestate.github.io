@@ -122,7 +122,7 @@
         title += 'the ' + state + ' state';
       }
 
-      $('#widget').prepend(title);
+      $('#widget').prepend('<p>' + title + '</p>');
 
       if (no_months !== '') {
         url += '&rows=' + no_months;
