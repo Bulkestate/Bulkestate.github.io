@@ -1,6 +1,5 @@
 (function () {
   var jQuery;
-  var test = 1;
   if (window.jQuery === undefined || window.jQuery.fn.jquery !== '3.2.1') {
     test = 2;
     var script_tag = document.createElement('script');
@@ -39,7 +38,7 @@
         href: 'https://fonts.googleapis.com/css?family=Rubik'
       });
       $('head').append(font_link);
-      $('#widget').append('<p>Top Tier Home Value Index Beckett NJ</p>');
+      // $('#widget').append('<p>Top Tier Home Value Index Beckett NJ</p>');
       // Set up flot plotting library
       $('#widget').append('<script src="https://bulkestate.github.io/js/jquery.flot.js"></script>');
       $('#widget').append('<script src="https://bulkestate.github.io/js/jquery.flot.time.js"></script>');
@@ -56,8 +55,15 @@
       var state = $('#widget-script').attr('state');
       var country = $('#widget-script').attr('country');
 
+      var title = '';
+      var full_type = {
+        MLPAH: 'Median Listing Price of All Homes in '
+      }
+      title += full_type[type];
+
       if (state === 'All') {
         var url = base + 'M' + '1' + '_' + type + '.json?' + key;
+        title += 'the USA';
       } else {
         var state_code = {
           AL: 3,
@@ -113,7 +119,10 @@
           WY: 50
         };
         var url = base + 'S' + state_code[state] + '_' + type + '.json?' + key;
+        title += 'the ' + state + ' state';
       }
+
+      $('#widget').prepend(title);
 
       if (no_months !== '') {
         url += '&rows=' + no_months;
@@ -144,7 +153,7 @@
         });
       });
 
-            // Enable value tracing
+      // Enable value tracing
       $('#widget').append("<div id='tooltip'></div>");
       $('#plot').on('plothover', function (event, pos, item) {
         if (item) {
