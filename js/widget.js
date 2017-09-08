@@ -164,7 +164,7 @@
           $('#tooltip').hide();
         }
       });
-      $('#widget').append('<a href="https://www.bulkestate.com">made by Bulkestate</a>');
+      $('#widget').append('<a href="https://www.bulkestate.com/en/">made by Bulkestate</a>');
     });
   }
 })();
