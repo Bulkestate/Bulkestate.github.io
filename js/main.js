@@ -11,8 +11,8 @@ function refresh_content () {
   state = $('#state').find(':selected').val();
   type = $('#type').find(':selected').val();
   update_timeframe();
-  $('#example').html("<code>&lt;div id='widget'&gt;&lt;/div&gt; \n&lt;script id='widget-script' src='https://bulkestate.github.io/js/widget.js' type='" + type + "' no_months='" + no_months + "' start_date='" + start_date + "' end_date='" + end_date + "' country='" + country + "' state='" + state + "'&gt;&lt;/script&gt;");
-  $('#widget-script').replaceWith("<script id='widget-script' src='https://bulkestate.github.io' type='" + type + "' no_months='" + no_months + "' start_date='" + start_date + "' end_date='" + end_date + "' country='" + country + "' state='" + state + "'></script>");
+  $('#example').html("<code>&lt;div id='widget'&gt;&lt;/div&gt; \n&lt;script id='widget-script' src='https://bulkestate.github.io/js/widget.js' data-type='" + type + "' no-months='" + no_months + "' start-date='" + start_date + "' end-date='" + end_date + "' country='" + country + "' state='" + state + "'&gt;&lt;/script&gt;");
+  $('#widget-script').replaceWith("<script id='widget-script' src='https://bulkestate.github.io' data-type='" + type + "' no-months='" + no_months + "' start-date='" + start_date + "' end-date='" + end_date + "' country='" + country + "' state='" + state + "'></script>");
 }
 
 function update_timeframe () {

@@ -40,70 +40,91 @@
       });
       $('head').append(font_link);
       $('#widget').append('<p>Top Tier Home Value Index Beckett NJ</p>');
-            // Set up flot plotting library
+      // Set up flot plotting library
       $('#widget').append('<script src="https://bulkestate.github.io/js/jquery.flot.js"></script>');
       $('#widget').append('<script src="https://bulkestate.github.io/js/jquery.flot.time.js"></script>');
       $('#widget').append('<div id="plot"></div>');
-      var url = 'https://www.quandl.com/api/v3/datasets/ZILLOW/C4639_ZHVITT.json?rows=12&api_key=BxZJxK2saJZPEyN7N-AH';
 
+      // generate url
+      var base = 'https://www.quandl.com/api/v3/datasets/ZILLOW/';
+      var key = 'api_key=BxZJxK2saJZPEyN7N-AH';
+
+      var type = $('#widget-script').attr('data-type');
+      var no_months = $('#widget-script').attr('no-months');
+      var start_date = $('#widget-script').attr('start-date');
+      var end_date = $('#widget-script').attr('end-date');
       var state = $('#widget-script').attr('state');
       var country = $('#widget-script').attr('country');
 
-      //  dataset state codes
-      var listing_state = {
-        AL: 3,
-        AK: 2,
-        AZ: 5,
-        AR: 4,
-        CA: 6,
-        CO: 7,
-        CT: 8,
-        DE: 10,
-        DC: 9,
-        FL: 11,
-        GA: 12,
-        HI: 13,
-        ID: 15,
-        IL: 16,
-        IN: 17,
-        IA: 14,
-        KS: 18,
-        KY: 19,
-        LA: 20,
-        ME: 51,
-        MD: 22,
-        MA: 21,
-        MI: 23,
-        MN: 24,
-        MS: 26,
-        MO: 25,
-        MT: 27,
-        NE: 30,
-        NV: 34,
-        NH: 31,
-        NJ: 32,
-        NM: 33,
-        NY: 35,
-        NC: 28,
-        ND: 29,
-        OH: 36,
-        OK: 37,
-        OR: 38,
-        PA: 39,
-        RI: 40,
-        SC: 41,
-        SD: 52,
-        TN: 42,
-        TX: 43,
-        UT: 44,
-        VT: 46,
-        VA: 45,
-        WA: 47,
-        WV: 49,
-        WI: 48,
-        WY: 50
-      };
+      if (state === 'All') {
+        var url = base + 'M' + '1' + '_' + type + '.json?' + key;
+      } else {
+        var state_code = {
+          AL: 3,
+          AK: 2,
+          AZ: 5,
+          AR: 4,
+          CA: 6,
+          CO: 7,
+          CT: 8,
+          DE: 10,
+          DC: 9,
+          FL: 11,
+          GA: 12,
+          HI: 13,
+          ID: 15,
+          IL: 16,
+          IN: 17,
+          IA: 14,
+          KS: 18,
+          KY: 19,
+          LA: 20,
+          ME: 51,
+          MD: 22,
+          MA: 21,
+          MI: 23,
+          MN: 24,
+          MS: 26,
+          MO: 25,
+          MT: 27,
+          NE: 30,
+          NV: 34,
+          NH: 31,
+          NJ: 32,
+          NM: 33,
+          NY: 35,
+          NC: 28,
+          ND: 29,
+          OH: 36,
+          OK: 37,
+          OR: 38,
+          PA: 39,
+          RI: 40,
+          SC: 41,
+          SD: 52,
+          TN: 42,
+          TX: 43,
+          UT: 44,
+          VT: 46,
+          VA: 45,
+          WA: 47,
+          WV: 49,
+          WI: 48,
+          WY: 50
+        };
+        var url = base + 'S' + state_code[state] + '_' + type + '.json?' + key;
+      }
 
+      if (no_months !== '') {
+        url += '&rows=' + no_months;
+      } else {
+        if (start_date !== '') {
+          url += '&start_date=' + start_date;
+        }
+        if (end_date !== '') {
+          url += '&end_date=' + end_date;
+        }
+      }
       // Get the data
       var prices = [];
       var status = $.getJSON(url, function (data) {
@@ -112,7 +133,7 @@
         });
       });
 
-            // Plot the data
+      // Plot the data
       $.when(status).then(function () {
         $.plot($('#plot'), [prices], {
           xaxis: {mode: 'time'},
