@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Connecticut Real Estate Price Widget</title>
+    <meta name="description" content="Customizable Connecticut real estate widgets for your website or blog, that visualize sales data from all states in the US">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/github.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://bulkestate.com">Bulkestate Widgets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://bulkestate.github.io/">Sales Data<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rent Data</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="content">
+            <br />
+            <h2>Connecticut Real Estate Sales Data Widget</h2>
+            <br />
+
+            <div id="country-wrapper">
+                <h3>Country:</h3>
+                <select id="country">
+                    <option value="US">US</option>
+                </select>
+            </div>
+            <br>
+            <div id="type-wrapper">
+              <h3>Type:</h3>
+              <select id="type">
+                <option value="MLPAH"> Median Listing Price </option>
+              </select>
+            </div>
+            <br>
+            <div id="state-wrapper">
+                <h3>State:</h3>
+                <p>Connecticut</p>
+                <select id="state" style="display:none;">
+                    <option value="CT" selected="selected">All</option>
+                </select>
+            </div>
+            <br>
+            <div id="time-wrapper">
+                <h3>Time Frame</h3>
+                <form id="time-frame">
+                    <input type="radio" name="time-frame" value="months"> Specify number of months
+                    <br>
+                    <div id='months-wrapper'>
+                      <div class="alert alert-info" role="alert">
+                        <p>When you specify the number of months, the widget will display data from the present moment (continuously updating, even on your website) to specified number of months into the past.</p>
+                      </div>
+                      Number of months: <input id="months" type="number">
+                    </div>
+                    <input type="radio" name="time-frame" value="date"> Specify date
+                    <div id="date-wrapper">
+                      <div class="alert alert-info" role="alert">
+                        <p>Specify start and end date, if you want the widget to always display data from that interval.
+                        You can also specify just the starting date and the widget will display data from that date
+                        until the momment when widget is generated (continuously updated, even on your website)
+                        or specify just the end date for the widget to use the earliest available data.</p>
+                      </div>
+                      Start date: <input id='date-start' type='text' placeholder="yyyy-mm-dd">
+                      End date: <input id='date-end' type='text' placeholder="yyyy-mm-dd">
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div id="widget"></div>
+            <script id="widget-script" src="../js/widget.js" data-type='MLPAH' no-months='12' start-date='' end-date='' country='US' state='All'></script>
+            <br>
+            <p>Add this widget by pasting the folowing code in <code>&lt;body&gt;</code> of your website</p>
+            <pre id="example"><code>&lt;div id='widget'&gt;&lt;/div&gt;
+&lt;script src='https://bulkestate.github.io/js/widget.js' country='US' state='All'&gt;&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-4.1.0.slim.min.js" integrity="sha383-KJ2o1DKtIkvYIK2UENzmM6KCkRr/rE8/Qpg5aAZGJwFDMVNA/GpGFF92hXpG4KkN" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+
+</html>
