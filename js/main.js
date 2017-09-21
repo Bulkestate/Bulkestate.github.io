@@ -21,7 +21,7 @@ function update_timeframe () {
     no_months = $('#months').val();
     start_date = '';
     end_date = '';
-  } else {
+  } else if (selected === '#date') {
     start_date = $('#date-start').val();
     end_date = $('#date-end').val();
     no_months = '';
