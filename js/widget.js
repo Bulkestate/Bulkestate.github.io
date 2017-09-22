@@ -49,16 +49,38 @@
       var key = 'api_key=BxZJxK2saJZPEyN7N-AH';
 
       var type = $('#widget-script').attr('data-type');
+      if (type === undefined) {
+        type = 'MLPAH';
+      }
       var no_months = $('#widget-script').attr('no-months');
+      if (no_months === undefined) {
+        no_months = '12';
+      }
       var start_date = $('#widget-script').attr('start-date');
+      if (start_date === undefined) {
+        start_date = '';
+      } else {
+        no_months = '';
+      }
       var end_date = $('#widget-script').attr('end-date');
+      if (end_date === undefined) {
+        end_date = '';
+      } else {
+        no_months = '';
+      }
       var state = $('#widget-script').attr('state');
+      if (state === undefined) {
+        state = 'All';
+      }
       var country = $('#widget-script').attr('country');
+      if (country === undefined) {
+        country = 'US';
+      }
 
       var title = '';
       var full_type = {
         MLPAH: 'Median Listing Price of All Homes in '
-      }
+      };
       title += full_type[type];
 
       if (state === 'All') {
