@@ -78,7 +78,7 @@
       }
       var width = $('#widget-script').attr('width');
       if (width === undefined) {
-        width = '400';
+        width = '600';
       }
 
       $('#widget').css({'width': width + 'px', 'height': 0.7 * width + 'px'});
