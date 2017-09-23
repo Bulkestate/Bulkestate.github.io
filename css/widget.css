@@ -1,8 +1,6 @@
 #widget {
     position: static;
     border: 1px solid black;
-    height: 400px;
-    width: 600px;
     font-family: 'Rubik', sans-serif;
     display: block;
     text-align: center;
@@ -21,7 +19,6 @@
 }
 #plot {
     padding-top: 0;
-    height: 300px;
     width: inherit;
     position: relative;
 }

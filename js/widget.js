@@ -76,6 +76,13 @@
       if (country === undefined) {
         country = 'US';
       }
+      var width = $('#widget-script').attr('width');
+      if (width === undefined) {
+        width = '400';
+      }
+
+      $('#widget').css({'width': width + 'px', 'height': 0.7 * width + 'px'});
+      $('#plot').css({'height': 0.5 * width + 'px'});
 
       var title = '';
       var full_type = {
