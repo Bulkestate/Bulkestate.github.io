@@ -52,22 +52,20 @@
       if (type === undefined) {
         type = 'MLPAH';
       }
-      var no_months = $('#widget-script').attr('no-months');
-      if (no_months === undefined) {
-        no_months = '12';
-      }
+
       var start_date = $('#widget-script').attr('start-date');
       if (start_date === undefined) {
         start_date = '';
-      } else {
-        no_months = '';
       }
       var end_date = $('#widget-script').attr('end-date');
       if (end_date === undefined) {
         end_date = '';
-      } else {
-        no_months = '';
       }
+      var no_months = $('#widget-script').attr('no-months');
+      if ((no_months === undefined) && (end_date === '') && (start_date === '')) {
+        no_months = '12';
+      }
+
       var state = $('#widget-script').attr('state');
       if (state === undefined) {
         state = 'All';
@@ -78,7 +76,7 @@
       }
       var width = $('#widget-script').attr('width');
       if (width === undefined) {
-        width = '400';
+        width = '600';
       }
 
       $('#widget').css({'width': width + 'px', 'height': 0.7 * width + 'px'});
